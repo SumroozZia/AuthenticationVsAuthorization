@@ -3,6 +3,7 @@ const express = require("express");
 const {dev} = require("./config");
 const connectDatabase = require("./config/db");
 const { clientError,serverError } = require("./controllers/error");
+const { userRoutes } = require("./routes/user");
 
 
 const app = express();
@@ -21,6 +22,6 @@ app.get("/",(req,res)=>{
 app.get("/test",(req,res)=>{
     res.render("test")
 })
-
+app.use(userRoutes)
 app.use(clientError);
 app.use(serverError);
