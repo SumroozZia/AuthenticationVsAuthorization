@@ -7,6 +7,7 @@ const { clientError,serverError } = require("./controllers/error");
 
 const app = express();
 
+app.set("view engine", "ejs");
 
 
 app.listen(dev.app.port, async()=>{
@@ -16,6 +17,9 @@ app.listen(dev.app.port, async()=>{
 
 app.get("/",(req,res)=>{
     res.send("test is working")
+})
+app.get("/test",(req,res)=>{
+    res.render("test")
 })
 
 app.use(clientError);
