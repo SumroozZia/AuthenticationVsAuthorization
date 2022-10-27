@@ -16,12 +16,14 @@ app.listen(dev.app.port, async()=>{
     await connectDatabase();
 } )
 
+
 app.get("/",(req,res)=>{
     res.send("test is working")
 })
 app.get("/test",(req,res)=>{
     res.render("test")
 })
-app.use(userRoutes)
+
+app.use(userRoutes);
 app.use(clientError);
 app.use(serverError);
