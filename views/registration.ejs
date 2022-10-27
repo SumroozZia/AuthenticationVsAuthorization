@@ -1,3 +1,22 @@
 <%- include("./layout/header.ejs") %>
-<h1>Registration is here page</h1>
+<h1>Registration is here </h1>
+<form action="/register" method="post" enctype="multipart/form-data">
+    <div>
+        <input type="text" placeholder="Enter Name" name="name" size="40">
+    </div>
+    <br>
+    <div>
+        <input type="email" placeholder="Enter Email" name="email" size="40" required>
+    </div> 
+    <br>
+    <div>
+        <input type="password" placeholder="Enter password" name="password" size="40" required>
+    </div> 
+    <br>
+    <div>
+        <input type="file"  name="image" size="40" required>
+    </div> 
+    <br>
+    <button type="submit">Register</button>
+</form>
 <%- include("./layout/footer.ejs") %>

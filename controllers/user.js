@@ -7,4 +7,17 @@ try {
     })
 }
 }
-module.exports = {loadRegister};
+
+const registerUser = async(req,res)=>{
+    try {
+       res.send(req.body)
+    } catch (error) {
+        res.status(500).sent({
+            message: error.message
+        })
+    }
+    }
+
+
+
+module.exports = {loadRegister,registerUser};
